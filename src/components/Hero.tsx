@@ -1,16 +1,24 @@
 import { Button } from "@/components/ui/button";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import { useEffect, useCallback } from "react";
 
 const Hero = () => {
-  const [emblaRef] = useEmblaCarousel(
-    { 
-      loop: true, 
-      align: "center",
-      skipSnaps: false,
-    },
-    [Autoplay({ delay: 3000, stopOnInteraction: false })]
-  );
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true, 
+    align: "center",
+    skipSnaps: false,
+  });
+
+  // Auto-scroll effect
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const autoScroll = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 3000);
+
+    return () => clearInterval(autoScroll);
+  }, [emblaApi]);
 
   const exampleAssets = [
     { id: 1, color: "hsl(30 35% 85%)", label: "Product Shot" },
