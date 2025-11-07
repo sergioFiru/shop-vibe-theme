@@ -19,10 +19,7 @@ const TemplateCard = ({ name, description, exampleImage, onClick }: TemplateCard
       </div>
       <CardContent className="p-4">
         <h3 className="font-medium text-foreground mb-1">{name}</h3>
-        <p className="text-sm text-muted-foreground mb-3">{description}</p>
-        <Button size="sm" variant="outline" className="w-full">
-          Generate Asset
-        </Button>
+        <p className="text-sm text-muted-foreground">{description}</p>
       </CardContent>
     </Card>
   );
