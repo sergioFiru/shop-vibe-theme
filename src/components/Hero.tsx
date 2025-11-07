@@ -1,6 +1,11 @@
 import { Button } from "@/components/ui/button";
 import useEmblaCarousel from "embla-carousel-react";
-import { useEffect, useCallback } from "react";
+import { useEffect } from "react";
+import productShot from "@/assets/example-product-shot.jpg";
+import modelShoot from "@/assets/example-model-shoot.jpg";
+import heroBanner from "@/assets/example-hero-banner.jpg";
+import socialAd from "@/assets/example-social-ad.jpg";
+import view360 from "@/assets/example-360-view.jpg";
 
 const Hero = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -21,11 +26,11 @@ const Hero = () => {
   }, [emblaApi]);
 
   const exampleAssets = [
-    { id: 1, color: "hsl(30 35% 85%)", label: "Product Shot" },
-    { id: 2, color: "hsl(210 50% 60%)", label: "Model Shoot" },
-    { id: 3, color: "hsl(160 40% 65%)", label: "Hero Banner" },
-    { id: 4, color: "hsl(350 60% 70%)", label: "Social Ad" },
-    { id: 5, color: "hsl(30 30% 75%)", label: "360° View" },
+    { id: 1, image: productShot, label: "Product Shot" },
+    { id: 2, image: modelShoot, label: "Model Shoot" },
+    { id: 3, image: heroBanner, label: "Hero Banner" },
+    { id: 4, image: socialAd, label: "Social Ad" },
+    { id: 5, image: view360, label: "360° View" },
   ];
 
   return (
@@ -62,9 +67,10 @@ const Hero = () => {
                 }}
               >
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl hover-scale border-4 border-border/50">
-                  <div
-                    className="h-full w-full"
-                    style={{ backgroundColor: asset.color }}
+                  <img
+                    src={asset.image}
+                    alt={asset.label}
+                    className="h-full w-full object-cover"
                   />
                 </div>
               </div>
