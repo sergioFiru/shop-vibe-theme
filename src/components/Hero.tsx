@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import useEmblaCarousel from "embla-carousel-react";
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import productShot from "@/assets/example-product-shot.jpg";
 import modelShoot from "@/assets/example-model-shoot.jpg";
 import heroBanner from "@/assets/example-hero-banner.jpg";
@@ -13,17 +13,31 @@ const Hero = () => {
     align: "center",
     skipSnaps: false,
   });
+  const [scrollProgress, setScrollProgress] = useState(0);
 
-  // Auto-scroll effect
+  const onScroll = useCallback(() => {
+    if (!emblaApi) return;
+    const progress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
+    setScrollProgress(progress);
+  }, [emblaApi]);
+
   useEffect(() => {
     if (!emblaApi) return;
+    
+    onScroll();
+    emblaApi.on("scroll", onScroll);
+    emblaApi.on("reInit", onScroll);
 
     const autoScroll = setInterval(() => {
       emblaApi.scrollNext();
     }, 3000);
 
-    return () => clearInterval(autoScroll);
-  }, [emblaApi]);
+    return () => {
+      clearInterval(autoScroll);
+      emblaApi.off("scroll", onScroll);
+      emblaApi.off("reInit", onScroll);
+    };
+  }, [emblaApi, onScroll]);
 
   const exampleAssets = [
     { id: 1, image: productShot, label: "Product Shot" },
@@ -54,27 +68,47 @@ const Hero = () => {
       </div>
 
       {/* Carousel Section */}
-      <div className="w-full max-w-7xl mx-auto px-4" style={{ perspective: "1000px" }}>
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6 py-8">
-            {exampleAssets.map((asset) => (
-              <div
-                key={asset.id}
-                className="flex-[0_0_80%] md:flex-[0_0_40%] lg:flex-[0_0_25%] min-w-0"
-                style={{
-                  transform: "rotateY(-5deg) rotateX(2deg)",
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl hover-scale border-4 border-border/50">
-                  <img
-                    src={asset.image}
-                    alt={asset.label}
-                    className="h-full w-full object-cover"
-                  />
+      <div className="w-full max-w-7xl mx-auto px-4" style={{ perspective: "2000px" }}>
+        <div className="overflow-visible" ref={emblaRef}>
+          <div className="flex gap-6 py-12" style={{ transformStyle: "preserve-3d" }}>
+            {exampleAssets.map((asset, index) => {
+              const totalSlides = exampleAssets.length;
+              const slideProgress = (index / totalSlides) - scrollProgress;
+              const distanceFromCenter = Math.abs(slideProgress % 1);
+              
+              // Center slides (distanceFromCenter close to 0) should be further away
+              const scale = distanceFromCenter < 0.3 
+                ? 0.75 + (distanceFromCenter * 0.83) // Smaller when centered
+                : 1;
+              
+              const translateZ = distanceFromCenter < 0.3
+                ? -200 + (distanceFromCenter * 666) // Push back when centered
+                : 0;
+              
+              const opacity = distanceFromCenter < 0.4
+                ? 0.5 + (distanceFromCenter * 1.25)
+                : 1;
+
+              return (
+                <div
+                  key={asset.id}
+                  className="flex-[0_0_80%] md:flex-[0_0_40%] lg:flex-[0_0_28%] min-w-0 transition-all duration-300"
+                  style={{
+                    transform: `translateZ(${translateZ}px) scale(${scale})`,
+                    opacity: opacity,
+                    transformStyle: "preserve-3d",
+                  }}
+                >
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-4 border-border/50">
+                    <img
+                      src={asset.image}
+                      alt={asset.label}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
