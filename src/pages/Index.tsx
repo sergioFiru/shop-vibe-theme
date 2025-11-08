@@ -35,6 +35,126 @@ const templates = [
     description: "Create engaging social content",
     image: "hsl(25 35% 87%)" 
   },
+  { 
+    name: "Lifestyle Photography", 
+    description: "Natural product in daily life",
+    image: "hsl(28 32% 82%)" 
+  },
+  { 
+    name: "Close-up Detail", 
+    description: "Highlight product features",
+    image: "hsl(32 28% 78%)" 
+  },
+  { 
+    name: "Flat Lay", 
+    description: "Top-down product arrangement",
+    image: "hsl(26 36% 84%)" 
+  },
+  { 
+    name: "Product Packaging", 
+    description: "Showcase product with packaging",
+    image: "hsl(29 31% 81%)" 
+  },
+  { 
+    name: "Seasonal Theme", 
+    description: "Holiday and seasonal imagery",
+    image: "hsl(27 34% 86%)" 
+  },
+  { 
+    name: "Product Bundle", 
+    description: "Multiple products together",
+    image: "hsl(31 29% 79%)" 
+  },
+  { 
+    name: "Minimalist White", 
+    description: "Clean white background",
+    image: "hsl(30 20% 92%)" 
+  },
+  { 
+    name: "Dark & Moody", 
+    description: "Dramatic dark background",
+    image: "hsl(30 25% 65%)" 
+  },
+  { 
+    name: "Outdoor Scene", 
+    description: "Natural outdoor setting",
+    image: "hsl(28 33% 83%)" 
+  },
+  { 
+    name: "Food Styling", 
+    description: "Appetizing food photography",
+    image: "hsl(25 38% 88%)" 
+  },
+  { 
+    name: "Tech Product", 
+    description: "Modern tech showcase",
+    image: "hsl(30 27% 76%)" 
+  },
+  { 
+    name: "Fashion Editorial", 
+    description: "High-fashion imagery",
+    image: "hsl(26 35% 85%)" 
+  },
+  { 
+    name: "Before & After", 
+    description: "Transformation comparison",
+    image: "hsl(29 30% 80%)" 
+  },
+  { 
+    name: "Video Thumbnail", 
+    description: "Eye-catching video covers",
+    image: "hsl(28 34% 87%)" 
+  },
+  { 
+    name: "Product Comparison", 
+    description: "Side-by-side comparison",
+    image: "hsl(31 28% 77%)" 
+  },
+  { 
+    name: "Instagram Story", 
+    description: "Vertical story format",
+    image: "hsl(27 32% 84%)" 
+  },
+  { 
+    name: "Email Header", 
+    description: "Newsletter banner images",
+    image: "hsl(30 31% 81%)" 
+  },
+  { 
+    name: "Mobile App Screen", 
+    description: "App interface mockups",
+    image: "hsl(26 29% 78%)" 
+  },
+  { 
+    name: "Website Banner", 
+    description: "Wide web banners",
+    image: "hsl(29 33% 86%)" 
+  },
+  { 
+    name: "Product Infographic", 
+    description: "Visual product information",
+    image: "hsl(28 30% 82%)" 
+  },
+  { 
+    name: "Size Guide", 
+    description: "Dimensional reference images",
+    image: "hsl(31 27% 79%)" 
+  },
+  { 
+    name: "Testimonial Visual", 
+    description: "Customer review imagery",
+    image: "hsl(27 35% 85%)" 
+  },
+  { 
+    name: "Brand Story", 
+    description: "Behind-the-scenes content",
+    image: "hsl(30 29% 83%)" 
+  },
+  { 
+    name: "Collection Preview", 
+    description: "Product line showcase",
+    image: "hsl(28 31% 80%)" 
+  },
 ];
 
 const Index = () => {
@@ -58,7 +178,7 @@ const Index = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {templates.map((template) => (
             <TemplateCard 
               key={template.name} 

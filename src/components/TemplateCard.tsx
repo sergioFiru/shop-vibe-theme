@@ -10,7 +10,7 @@ interface TemplateCardProps {
 
 const TemplateCard = ({ name, description, exampleImage, onClick }: TemplateCardProps) => {
   return (
-    <Card className="group overflow-hidden border-border hover:shadow-lg transition-shadow cursor-pointer" onClick={onClick}>
+    <Card className="group overflow-hidden border-border hover:shadow-lg transition-shadow cursor-pointer rounded-md" onClick={onClick}>
       <div className="aspect-square overflow-hidden bg-secondary">
         <div 
           className="h-full w-full bg-muted group-hover:scale-105 transition-transform duration-300"
