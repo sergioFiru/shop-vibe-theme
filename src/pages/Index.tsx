@@ -269,19 +269,19 @@ const Index = () => {
       <Navbar />
       <Hero />
       
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">
+      <section className="container mx-auto px-4 py-24">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-bold text-foreground mb-6">
             Generate AI Assets for Your E-commerce
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Choose a template below and create professional product imagery in seconds
           </p>
         </div>
         
         {/* Video Generation Templates */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-6">AI Video Generation</h3>
+        <div className="mb-32 border-t border-border pt-16">
+          <h3 className="text-4xl font-bold text-foreground mb-10 text-center">AI Video Generation</h3>
           <div className="flex gap-8">
             {/* Left side - 3x2 grid of regular cards */}
             <div className="flex-1 grid grid-cols-3 gap-8">
@@ -314,8 +314,8 @@ const Index = () => {
         </div>
 
         {/* Image Generation Templates */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-6">AI Image Generation</h3>
+        <div className="mb-32 border-t border-border pt-16">
+          <h3 className="text-4xl font-bold text-foreground mb-10 text-center">AI Image Generation</h3>
           <div className="space-y-8">
             {/* First row - Featured card */}
             {imageGenerationTemplates.filter(t => t.featured).map((template) => (
@@ -344,8 +344,8 @@ const Index = () => {
         </div>
 
         {/* 3D & Interactive */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-6">3D & Interactive</h3>
+        <div className="mb-32 border-t border-border pt-16">
+          <h3 className="text-4xl font-bold text-foreground mb-10 text-center">3D & Interactive</h3>
           <div className="flex gap-8">
             {/* Left side - Large featured card */}
             <div className="w-2/3">
@@ -376,8 +376,8 @@ const Index = () => {
         </div>
 
         {/* Promotional Templates */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-6">Promotional Templates</h3>
+        <div className="mb-32 border-t border-border pt-16">
+          <h3 className="text-4xl font-bold text-foreground mb-10 text-center">Promotional Templates</h3>
           <div className="space-y-8">
             {/* Wide banner-style card */}
             {promotionalTemplates.filter(t => t.featured).map((template) => (
@@ -406,8 +406,8 @@ const Index = () => {
         </div>
 
         {/* Other Templates */}
-        <div>
-          <h3 className="text-2xl font-semibold text-foreground mb-6">Other Templates</h3>
+        <div className="border-t border-border pt-16">
+          <h3 className="text-4xl font-bold text-foreground mb-10 text-center">Other Templates</h3>
           <div className="grid grid-cols-4 gap-8">
             {otherTemplates.map((template) => (
               <TemplateCard 
