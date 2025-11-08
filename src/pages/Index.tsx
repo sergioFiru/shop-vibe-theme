@@ -271,7 +271,7 @@ const Index = () => {
                 exampleImage={template.image}
                 isVideo={template.isVideo}
                 onClick={() => setSelectedTemplate(template)}
-                className="row-span-2"
+                className="row-span-2 h-full"
               />
             ))}
           </div>
