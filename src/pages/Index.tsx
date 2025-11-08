@@ -248,9 +248,9 @@ const Index = () => {
         {/* Video Generation Templates */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-foreground mb-6">AI Video Generation</h3>
-          <div className="grid grid-cols-4 auto-rows-fr gap-8">
+          <div className="grid grid-cols-4 gap-8">
             {/* Left side - 3x2 grid of regular cards */}
-            <div className="col-span-3 grid grid-cols-3 auto-rows-fr gap-8">
+            <div className="col-span-3 grid grid-cols-3 gap-8">
               {videoGenerationTemplates.filter(t => !t.featured).map((template) => (
                 <TemplateCard 
                   key={template.name} 
