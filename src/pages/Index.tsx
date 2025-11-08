@@ -22,7 +22,50 @@ import templateSocial from "@/assets/template-social-ad.jpg";
 import templateLifestyle from "@/assets/template-lifestyle.jpg";
 import templateCloseup from "@/assets/template-closeup.jpg";
 
-const videoGenerationTemplates = [
+// Site Assets - Image Generation
+const photoShootTemplates = [
+  { 
+    name: "Studio Lighting", 
+    description: "Professional studio product shots",
+    image: templateStudio,
+    featured: true
+  },
+  { 
+    name: "Lifestyle Photography", 
+    description: "Natural product in daily life",
+    image: templateLifestyle
+  },
+  { 
+    name: "Model Fashion Shoot", 
+    description: "Professional model photography",
+    image: templateModel
+  },
+  { 
+    name: "Moon Scene", 
+    description: "Dramatic moonlit product shots",
+    image: "hsl(220 30% 25%)"
+  },
+  { 
+    name: "Safari Adventure", 
+    description: "Wild outdoor product scenes",
+    image: "hsl(35 40% 55%)"
+  },
+  { 
+    name: "Black Friday Sale", 
+    description: "Promotional sale imagery",
+    image: "hsl(0 0% 10%)"
+  },
+];
+
+// Video Assets
+const videoTemplates = [
+  { 
+    name: "Fashion Hero Video", 
+    description: "Cinematic fashion showcase",
+    image: videoModel,
+    isVideo: true,
+    featured: true
+  },
   { 
     name: "360° Product Rotation", 
     description: "Spinning product showcase video",
@@ -30,15 +73,15 @@ const videoGenerationTemplates = [
     isVideo: true
   },
   { 
-    name: "Product Unboxing", 
-    description: "Engaging unboxing experience",
-    image: videoUnboxing,
+    name: "Product Animation", 
+    description: "Dynamic product movement",
+    image: videoDemo,
     isVideo: true
   },
   { 
-    name: "Product Demo", 
-    description: "Show product in action",
-    image: videoDemo,
+    name: "Product 360°", 
+    description: "Complete rotation view",
+    image: video360,
     isVideo: true
   },
   { 
@@ -53,160 +96,60 @@ const videoGenerationTemplates = [
     image: videoLifestyle,
     isVideo: true
   },
+];
+
+// 3D & Interactive
+const threeDTemplates = [
   { 
-    name: "Before & After", 
-    description: "Transformation reveal video",
-    image: videoBeforeAfter,
-    isVideo: true
+    name: "3D Product Render", 
+    description: "Photorealistic 3D visualization",
+    image: templateScene,
+    featured: true
   },
   { 
-    name: "Model Runway Walk", 
-    description: "Dynamic fashion model videos",
-    image: videoModel,
-    isVideo: true,
-    featured: true
+    name: "360° View", 
+    description: "Interactive product rotation",
+    image: template360
+  },
+  { 
+    name: "Product Close-up", 
+    description: "Detailed texture showcase",
+    image: templateCloseup
   },
 ];
 
-const imageGenerationTemplates = [
+// Promotional Templates
+const promotionalTemplates = [
   { 
-    name: "Hero Product Showcase", 
-    description: "Create stunning large-scale product imagery",
+    name: "Hero Banner Slideshow", 
+    description: "Large homepage hero banners",
     image: templateHero,
     featured: true
   },
   { 
-    name: "Product in Scene", 
-    description: "Place products in lifestyle settings",
-    image: templateScene
-  },
-  { 
-    name: "Studio Lighting", 
-    description: "Professional studio product shots",
-    image: templateStudio
-  },
-  { 
     name: "Social Media Ad", 
-    description: "Create engaging social content",
+    description: "Engaging social content",
     image: templateSocial
-  },
-  { 
-    name: "Lifestyle Photography", 
-    description: "Natural product in daily life",
-    image: templateLifestyle
-  },
-];
-
-const otherTemplates = [
-  { 
-    name: "Flat Lay", 
-    description: "Top-down product arrangement",
-    image: "hsl(26 36% 84%)" 
-  },
-  { 
-    name: "Product Packaging", 
-    description: "Showcase product with packaging",
-    image: "hsl(29 31% 81%)" 
-  },
-  { 
-    name: "Seasonal Theme", 
-    description: "Holiday and seasonal imagery",
-    image: "hsl(27 34% 86%)" 
-  },
-  { 
-    name: "Product Bundle", 
-    description: "Multiple products together",
-    image: "hsl(31 29% 79%)" 
-  },
-  { 
-    name: "Minimalist White", 
-    description: "Clean white background",
-    image: "hsl(30 20% 92%)" 
-  },
-  { 
-    name: "Dark & Moody", 
-    description: "Dramatic dark background",
-    image: "hsl(30 25% 65%)" 
-  },
-  { 
-    name: "Outdoor Scene", 
-    description: "Natural outdoor setting",
-    image: "hsl(28 33% 83%)" 
-  },
-  { 
-    name: "Food Styling", 
-    description: "Appetizing food photography",
-    image: "hsl(25 38% 88%)" 
-  },
-  { 
-    name: "Tech Product", 
-    description: "Modern tech showcase",
-    image: "hsl(30 27% 76%)" 
-  },
-  { 
-    name: "Fashion Editorial", 
-    description: "High-fashion imagery",
-    image: "hsl(26 35% 85%)" 
-  },
-  { 
-    name: "Before & After", 
-    description: "Transformation comparison",
-    image: "hsl(29 30% 80%)" 
-  },
-  { 
-    name: "Video Thumbnail", 
-    description: "Eye-catching video covers",
-    image: "hsl(28 34% 87%)" 
-  },
-  { 
-    name: "Product Comparison", 
-    description: "Side-by-side comparison",
-    image: "hsl(31 28% 77%)" 
-  },
-  { 
-    name: "Instagram Story", 
-    description: "Vertical story format",
-    image: "hsl(27 32% 84%)" 
   },
   { 
     name: "Email Header", 
     description: "Newsletter banner images",
-    image: "hsl(30 31% 81%)" 
-  },
-  { 
-    name: "Mobile App Screen", 
-    description: "App interface mockups",
-    image: "hsl(26 29% 78%)" 
+    image: "hsl(30 31% 81%)"
   },
   { 
     name: "Website Banner", 
     description: "Wide web banners",
-    image: "hsl(29 33% 86%)" 
+    image: "hsl(29 33% 86%)"
   },
   { 
-    name: "Product Infographic", 
-    description: "Visual product information",
-    image: "hsl(28 30% 82%)" 
+    name: "Instagram Story", 
+    description: "Vertical story format",
+    image: "hsl(27 32% 84%)"
   },
   { 
-    name: "Size Guide", 
-    description: "Dimensional reference images",
-    image: "hsl(31 27% 79%)" 
-  },
-  { 
-    name: "Testimonial Visual", 
-    description: "Customer review imagery",
-    image: "hsl(27 35% 85%)" 
-  },
-  { 
-    name: "Brand Story", 
-    description: "Behind-the-scenes content",
-    image: "hsl(30 29% 83%)" 
-  },
-  { 
-    name: "Collection Preview", 
-    description: "Product line showcase",
-    image: "hsl(28 31% 80%)" 
+    name: "Seasonal Campaign", 
+    description: "Holiday and seasonal imagery",
+    image: "hsl(27 34% 86%)"
   },
 ];
 
@@ -231,13 +174,55 @@ const Index = () => {
           </p>
         </div>
         
-        {/* Video Generation Templates */}
+        {/* Site Assets - Image Generation */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-6">AI Video Generation</h3>
+          <h3 className="text-2xl font-semibold text-foreground mb-6">Site Assets - Image Generation</h3>
+          <div className="space-y-8">
+            {/* Featured large card */}
+            {photoShootTemplates.filter(t => t.featured).map((template) => (
+              <TemplateCard 
+                key={template.name} 
+                name={template.name}
+                description={template.description}
+                exampleImage={template.image}
+                onClick={() => setSelectedTemplate(template)}
+                className="[&>div:first-child]:aspect-[2/1]"
+              />
+            ))}
+            {/* Two medium cards side by side */}
+            <div className="grid grid-cols-2 gap-8">
+              {photoShootTemplates.slice(1, 3).map((template) => (
+                <TemplateCard 
+                  key={template.name} 
+                  name={template.name}
+                  description={template.description}
+                  exampleImage={template.image}
+                  onClick={() => setSelectedTemplate(template)}
+                />
+              ))}
+            </div>
+            {/* Three smaller cards */}
+            <div className="grid grid-cols-3 gap-8">
+              {photoShootTemplates.slice(3).map((template) => (
+                <TemplateCard 
+                  key={template.name} 
+                  name={template.name}
+                  description={template.description}
+                  exampleImage={template.image}
+                  onClick={() => setSelectedTemplate(template)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Video Assets */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-foreground mb-6">Video Assets</h3>
           <div className="flex gap-8">
-            {/* Left side - 3x2 grid of regular cards */}
-            <div className="flex-1 grid grid-cols-3 gap-8">
-              {videoGenerationTemplates.filter(t => !t.featured).map((template) => (
+            {/* Left side - 2x2 grid of regular cards */}
+            <div className="flex-1 grid grid-cols-2 gap-8">
+              {videoTemplates.filter(t => !t.featured).map((template) => (
                 <TemplateCard 
                   key={template.name} 
                   name={template.name}
@@ -248,9 +233,9 @@ const Index = () => {
                 />
               ))}
             </div>
-            {/* Right side - Featured card */}
-            <div className="w-1/4">
-              {videoGenerationTemplates.filter(t => t.featured).map((template) => (
+            {/* Right side - Featured tall card */}
+            <div className="w-1/3">
+              {videoTemplates.filter(t => t.featured).map((template) => (
                 <TemplateCard 
                   key={template.name} 
                   name={template.name}
@@ -265,24 +250,26 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Image Generation Templates */}
+        {/* 3D & Interactive */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-6">AI Image Generation</h3>
-          <div className="space-y-8">
-            {/* First row - Featured card */}
-            {imageGenerationTemplates.filter(t => t.featured).map((template) => (
-              <TemplateCard 
-                key={template.name} 
-                name={template.name}
-                description={template.description}
-                exampleImage={template.image}
-                onClick={() => setSelectedTemplate(template)}
-                className="[&>div:first-child]:aspect-[2/1]"
-              />
-            ))}
-            {/* Second row - Grid of 4 cards */}
-            <div className="grid grid-cols-4 gap-8">
-              {imageGenerationTemplates.filter(t => !t.featured).map((template) => (
+          <h3 className="text-2xl font-semibold text-foreground mb-6">3D & Interactive</h3>
+          <div className="flex gap-8">
+            {/* Left side - Large featured card */}
+            <div className="w-2/3">
+              {threeDTemplates.filter(t => t.featured).map((template) => (
+                <TemplateCard 
+                  key={template.name} 
+                  name={template.name}
+                  description={template.description}
+                  exampleImage={template.image}
+                  onClick={() => setSelectedTemplate(template)}
+                  className="h-full"
+                />
+              ))}
+            </div>
+            {/* Right side - Two stacked cards */}
+            <div className="w-1/3 flex flex-col gap-8">
+              {threeDTemplates.filter(t => !t.featured).map((template) => (
                 <TemplateCard 
                   key={template.name} 
                   name={template.name}
@@ -295,19 +282,33 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Other Templates */}
-        <div>
-          <h3 className="text-2xl font-semibold text-foreground mb-6">Other Templates</h3>
-          <div className="grid grid-cols-4 gap-8">
-            {otherTemplates.map((template) => (
+        {/* Promotional Templates */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-foreground mb-6">Promotional Templates</h3>
+          <div className="space-y-8">
+            {/* Wide banner style card */}
+            {promotionalTemplates.filter(t => t.featured).map((template) => (
               <TemplateCard 
                 key={template.name} 
                 name={template.name}
                 description={template.description}
                 exampleImage={template.image}
                 onClick={() => setSelectedTemplate(template)}
+                className="[&>div:first-child]:aspect-[3/1]"
               />
             ))}
+            {/* Grid of 5 cards */}
+            <div className="grid grid-cols-5 gap-8">
+              {promotionalTemplates.filter(t => !t.featured).map((template) => (
+                <TemplateCard 
+                  key={template.name} 
+                  name={template.name}
+                  description={template.description}
+                  exampleImage={template.image}
+                  onClick={() => setSelectedTemplate(template)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
