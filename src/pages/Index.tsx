@@ -30,6 +30,12 @@ const videoGenerationTemplates = [
     isVideo: true
   },
   { 
+    name: "Model Runway Walk", 
+    description: "Dynamic fashion model videos",
+    image: videoModel,
+    isVideo: true
+  },
+  { 
     name: "Product Unboxing", 
     description: "Engaging unboxing experience",
     image: videoUnboxing,
@@ -64,13 +70,6 @@ const videoGenerationTemplates = [
     description: "Highlight key features video",
     image: videoFeatures,
     isVideo: true
-  },
-  { 
-    name: "Model Runway Walk", 
-    description: "Dynamic fashion model videos",
-    image: videoModel,
-    isVideo: true,
-    featured: true
   },
 ];
 
@@ -254,34 +253,17 @@ const Index = () => {
         {/* Video Generation Templates */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-foreground mb-6">AI Video Generation</h3>
-          <div className="grid grid-cols-4 auto-rows-fr gap-8">
-            {/* Left side - 3x2 grid */}
-            <div className="col-span-3 grid grid-cols-3 gap-8">
-              {videoGenerationTemplates.filter(t => !t.featured).map((template) => (
-                <TemplateCard 
-                  key={template.name} 
-                  name={template.name}
-                  description={template.description}
-                  exampleImage={template.image}
-                  isVideo={template.isVideo}
-                  onClick={() => setSelectedTemplate(template)}
-                />
-              ))}
-            </div>
-            {/* Right side - Featured card spanning 2 rows */}
-            <div className="row-span-2">
-              {videoGenerationTemplates.filter(t => t.featured).map((template) => (
-                <TemplateCard 
-                  key={template.name} 
-                  name={template.name}
-                  description={template.description}
-                  exampleImage={template.image}
-                  isVideo={template.isVideo}
-                  onClick={() => setSelectedTemplate(template)}
-                  className="h-full"
-                />
-              ))}
-            </div>
+          <div className="grid grid-cols-4 gap-8">
+            {videoGenerationTemplates.map((template) => (
+              <TemplateCard 
+                key={template.name} 
+                name={template.name}
+                description={template.description}
+                exampleImage={template.image}
+                isVideo={template.isVideo}
+                onClick={() => setSelectedTemplate(template)}
+              />
+            ))}
           </div>
         </div>
 

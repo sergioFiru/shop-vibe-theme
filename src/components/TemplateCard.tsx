@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 interface TemplateCardProps {
   name: string;
@@ -8,15 +7,14 @@ interface TemplateCardProps {
   exampleImage: string;
   onClick: () => void;
   isVideo?: boolean;
-  className?: string;
 }
 
-const TemplateCard = ({ name, description, exampleImage, onClick, isVideo = false, className }: TemplateCardProps) => {
+const TemplateCard = ({ name, description, exampleImage, onClick, isVideo = false }: TemplateCardProps) => {
   const isImageUrl = exampleImage.startsWith('http') || exampleImage.startsWith('/') || exampleImage.startsWith('data:');
   
   return (
-    <Card className={cn("group overflow-hidden border-border hover:shadow-lg transition-shadow cursor-pointer rounded-md", className)} onClick={onClick}>
-      <div className="aspect-square overflow-hidden bg-secondary relative h-full">
+    <Card className="group overflow-hidden border-border hover:shadow-lg transition-shadow cursor-pointer rounded-md" onClick={onClick}>
+      <div className="aspect-square overflow-hidden bg-secondary relative">
         {isVideo && isImageUrl ? (
           <>
             <video 
