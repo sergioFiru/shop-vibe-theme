@@ -4,6 +4,15 @@ import TemplateCard from "@/components/TemplateCard";
 import GenerationModal from "@/components/GenerationModal";
 import { useState } from "react";
 
+import video360 from "@/assets/video-360-rotation.jpg";
+import videoModel from "@/assets/video-model-walk.jpg";
+import videoUnboxing from "@/assets/video-unboxing.jpg";
+import videoDemo from "@/assets/video-demo.jpg";
+import videoSocial from "@/assets/video-social-reel.jpg";
+import videoLifestyle from "@/assets/video-lifestyle.jpg";
+import videoBeforeAfter from "@/assets/video-before-after.jpg";
+import videoFeatures from "@/assets/video-features.jpg";
+
 import template360 from "@/assets/template-360-view.jpg";
 import templateModel from "@/assets/template-model-shoot.jpg";
 import templateHero from "@/assets/template-hero-banner.jpg";
@@ -12,6 +21,49 @@ import templateStudio from "@/assets/template-studio-lighting.jpg";
 import templateSocial from "@/assets/template-social-ad.jpg";
 import templateLifestyle from "@/assets/template-lifestyle.jpg";
 import templateCloseup from "@/assets/template-closeup.jpg";
+
+const videoGenerationTemplates = [
+  { 
+    name: "360° Product Rotation", 
+    description: "Spinning product showcase video",
+    image: video360
+  },
+  { 
+    name: "Model Runway Walk", 
+    description: "Dynamic fashion model videos",
+    image: videoModel
+  },
+  { 
+    name: "Product Unboxing", 
+    description: "Engaging unboxing experience",
+    image: videoUnboxing
+  },
+  { 
+    name: "Product Demo", 
+    description: "Show product in action",
+    image: videoDemo
+  },
+  { 
+    name: "Social Media Reel", 
+    description: "Short-form viral content",
+    image: videoSocial
+  },
+  { 
+    name: "Lifestyle Scene", 
+    description: "Product in daily life video",
+    image: videoLifestyle
+  },
+  { 
+    name: "Before & After", 
+    description: "Transformation reveal video",
+    image: videoBeforeAfter
+  },
+  { 
+    name: "Product Features", 
+    description: "Highlight key features video",
+    image: videoFeatures
+  },
+];
 
 const imageGenerationTemplates = [
   { 
@@ -190,6 +242,22 @@ const Index = () => {
           </p>
         </div>
         
+        {/* Video Generation Templates */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-foreground mb-6">AI Video Generation</h3>
+          <div className="grid grid-cols-4 gap-8">
+            {videoGenerationTemplates.map((template) => (
+              <TemplateCard 
+                key={template.name} 
+                name={template.name}
+                description={template.description}
+                exampleImage={template.image}
+                onClick={() => setSelectedTemplate(template)}
+              />
+            ))}
+          </div>
+        </div>
+
         {/* Image Generation Templates */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-foreground mb-6">AI Image Generation</h3>
