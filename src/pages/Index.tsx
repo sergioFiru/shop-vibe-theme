@@ -30,12 +30,6 @@ const videoGenerationTemplates = [
     isVideo: true
   },
   { 
-    name: "Model Runway Walk", 
-    description: "Dynamic fashion model videos",
-    image: videoModel,
-    isVideo: true
-  },
-  { 
     name: "Product Unboxing", 
     description: "Engaging unboxing experience",
     image: videoUnboxing,
@@ -70,6 +64,13 @@ const videoGenerationTemplates = [
     description: "Highlight key features video",
     image: videoFeatures,
     isVideo: true
+  },
+  { 
+    name: "Model Runway Walk", 
+    description: "Dynamic fashion model videos",
+    image: videoModel,
+    isVideo: true,
+    featured: true
   },
 ];
 
@@ -253,7 +254,7 @@ const Index = () => {
         {/* Video Generation Templates */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-foreground mb-6">AI Video Generation</h3>
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-4 grid-rows-2 gap-8">
             {videoGenerationTemplates.map((template) => (
               <TemplateCard 
                 key={template.name} 
@@ -262,6 +263,7 @@ const Index = () => {
                 exampleImage={template.image}
                 isVideo={template.isVideo}
                 onClick={() => setSelectedTemplate(template)}
+                className={template.featured ? "row-span-2" : ""}
               />
             ))}
           </div>
