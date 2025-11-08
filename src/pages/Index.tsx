@@ -72,28 +72,28 @@ const imageGenerationTemplates = [
   { 
     name: "Hero Product Showcase", 
     description: "Create stunning large-scale product imagery",
-    image: templateHero,
+    image: "hsl(280 50% 94%)",
     featured: true
   },
   { 
     name: "Product in Scene", 
     description: "Place products in lifestyle settings",
-    image: templateScene
+    image: "hsl(150 45% 92%)"
   },
   { 
     name: "Studio Lighting", 
     description: "Professional studio product shots",
-    image: templateStudio
+    image: "hsl(40 55% 95%)"
   },
   { 
     name: "Social Media Ad", 
     description: "Create engaging social content",
-    image: templateSocial
+    image: "hsl(320 52% 93%)"
   },
   { 
     name: "Lifestyle Photography", 
     description: "Natural product in daily life",
-    image: templateLifestyle
+    image: "hsl(190 48% 94%)"
   },
 ];
 
