@@ -72,17 +72,8 @@ const imageGenerationTemplates = [
   { 
     name: "360° Product View", 
     description: "Generate rotating product showcase",
-    image: template360
-  },
-  { 
-    name: "Model Photoshoot", 
-    description: "Create professional model imagery",
-    image: templateModel
-  },
-  { 
-    name: "Hero Banner", 
-    description: "Design stunning hero sections",
-    image: templateHero
+    image: template360,
+    featured: true
   },
   { 
     name: "Product in Scene", 
@@ -282,16 +273,32 @@ const Index = () => {
         {/* Image Generation Templates */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-foreground mb-6">AI Image Generation</h3>
-          <div className="grid grid-cols-4 gap-8">
-            {imageGenerationTemplates.map((template) => (
-              <TemplateCard 
-                key={template.name} 
-                name={template.name}
-                description={template.description}
-                exampleImage={template.image}
-                onClick={() => setSelectedTemplate(template)}
-              />
-            ))}
+          <div className="flex gap-8">
+            {/* Left side - Featured card */}
+            <div className="w-3/4">
+              {imageGenerationTemplates.filter(t => t.featured).map((template) => (
+                <TemplateCard 
+                  key={template.name} 
+                  name={template.name}
+                  description={template.description}
+                  exampleImage={template.image}
+                  onClick={() => setSelectedTemplate(template)}
+                  className="h-full"
+                />
+              ))}
+            </div>
+            {/* Right side - Grid of remaining cards */}
+            <div className="flex-1 grid grid-cols-2 gap-8">
+              {imageGenerationTemplates.filter(t => !t.featured).map((template) => (
+                <TemplateCard 
+                  key={template.name} 
+                  name={template.name}
+                  description={template.description}
+                  exampleImage={template.image}
+                  onClick={() => setSelectedTemplate(template)}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
