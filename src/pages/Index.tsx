@@ -178,7 +178,7 @@ const Index = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-4 gap-8">
           {templates.map((template) => (
             <TemplateCard 
               key={template.name} 
