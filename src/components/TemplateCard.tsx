@@ -17,7 +17,7 @@ const TemplateCard = ({ name, description, exampleImage, onClick, isVideo = fals
     <Card className={`group overflow-hidden border-border hover:shadow-lg transition-shadow cursor-pointer rounded-md flex flex-col ${className || ''}`} onClick={onClick}>
       <div className="aspect-square overflow-hidden bg-secondary relative flex-shrink-0">
         {isVideo && isImageUrl ? (
-          <>
+          <div className="relative h-full w-full">
             <video 
               src={exampleImage} 
               className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -31,7 +31,7 @@ const TemplateCard = ({ name, description, exampleImage, onClick, isVideo = fals
                 <div className="w-0 h-0 border-l-[20px] border-l-white border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1" />
               </div>
             </div>
-          </>
+          </div>
         ) : isImageUrl ? (
           <img 
             src={exampleImage} 
