@@ -26,42 +26,50 @@ const videoGenerationTemplates = [
   { 
     name: "360° Product Rotation", 
     description: "Spinning product showcase video",
-    image: video360
+    image: video360,
+    isVideo: true
   },
   { 
     name: "Model Runway Walk", 
     description: "Dynamic fashion model videos",
-    image: videoModel
+    image: videoModel,
+    isVideo: true
   },
   { 
     name: "Product Unboxing", 
     description: "Engaging unboxing experience",
-    image: videoUnboxing
+    image: videoUnboxing,
+    isVideo: true
   },
   { 
     name: "Product Demo", 
     description: "Show product in action",
-    image: videoDemo
+    image: videoDemo,
+    isVideo: true
   },
   { 
     name: "Social Media Reel", 
     description: "Short-form viral content",
-    image: videoSocial
+    image: videoSocial,
+    isVideo: true
   },
   { 
     name: "Lifestyle Scene", 
     description: "Product in daily life video",
-    image: videoLifestyle
+    image: videoLifestyle,
+    isVideo: true
   },
   { 
     name: "Before & After", 
     description: "Transformation reveal video",
-    image: videoBeforeAfter
+    image: videoBeforeAfter,
+    isVideo: true
   },
   { 
     name: "Product Features", 
     description: "Highlight key features video",
-    image: videoFeatures
+    image: videoFeatures,
+    isVideo: true
   },
 ];
 
@@ -252,6 +260,7 @@ const Index = () => {
                 name={template.name}
                 description={template.description}
                 exampleImage={template.image}
+                isVideo={template.isVideo}
                 onClick={() => setSelectedTemplate(template)}
               />
             ))}
