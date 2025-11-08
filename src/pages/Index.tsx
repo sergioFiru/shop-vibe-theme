@@ -72,28 +72,28 @@ const imageGenerationTemplates = [
   { 
     name: "Hero Product Showcase", 
     description: "Create stunning large-scale product imagery",
-    image: "hsl(280 60% 85%)",
+    image: "hsl(280 60% 70%)",
     featured: true
   },
   { 
     name: "Product in Scene", 
     description: "Place products in lifestyle settings",
-    image: "hsl(150 55% 82%)"
+    image: "hsl(150 55% 68%)"
   },
   { 
     name: "Studio Lighting", 
     description: "Professional studio product shots",
-    image: "hsl(40 65% 84%)"
+    image: "hsl(40 65% 72%)"
   },
   { 
     name: "Social Media Ad", 
     description: "Create engaging social content",
-    image: "hsl(320 62% 83%)"
+    image: "hsl(320 62% 70%)"
   },
   { 
     name: "Lifestyle Photography", 
     description: "Natural product in daily life",
-    image: "hsl(190 58% 85%)"
+    image: "hsl(190 58% 72%)"
   },
 ];
 
@@ -101,18 +101,18 @@ const threeDTemplates = [
   { 
     name: "360° Product View", 
     description: "Interactive rotating product display",
-    image: "hsl(210 50% 86%)",
+    image: "hsl(210 50% 72%)",
     featured: true
   },
   { 
     name: "AR Try-On", 
     description: "Augmented reality preview",
-    image: "hsl(220 45% 84%)" 
+    image: "hsl(220 45% 70%)" 
   },
   { 
     name: "3D Model Viewer", 
     description: "Interactive 3D product model",
-    image: "hsl(200 48% 85%)" 
+    image: "hsl(200 48% 71%)" 
   },
 ];
 
@@ -120,28 +120,28 @@ const promotionalTemplates = [
   { 
     name: "Hero Slideshow", 
     description: "Dynamic banner carousel",
-    image: "hsl(350 70% 85%)",
+    image: "hsl(350 70% 72%)",
     featured: true
   },
   { 
     name: "Flash Sale Banner", 
     description: "Limited time offer display",
-    image: "hsl(0 65% 84%)" 
+    image: "hsl(0 65% 70%)" 
   },
   { 
     name: "Discount Announcement", 
     description: "Promotional offer card",
-    image: "hsl(340 68% 86%)" 
+    image: "hsl(340 68% 73%)" 
   },
   { 
     name: "Seasonal Campaign", 
     description: "Holiday promotional banner",
-    image: "hsl(280 55% 85%)" 
+    image: "hsl(280 55% 71%)" 
   },
   { 
     name: "New Arrival Banner", 
     description: "Product launch announcement",
-    image: "hsl(160 50% 84%)" 
+    image: "hsl(160 50% 70%)" 
   },
 ];
 
