@@ -277,6 +277,7 @@ const Index = () => {
                 description={template.description}
                 exampleImage={template.image}
                 onClick={() => setSelectedTemplate(template)}
+                className="[&>div:first-child]:aspect-[2/1]"
               />
             ))}
             {/* Second row - Grid of 4 cards */}
