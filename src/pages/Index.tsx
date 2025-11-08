@@ -22,18 +22,11 @@ import templateSocial from "@/assets/template-social-ad.jpg";
 import templateLifestyle from "@/assets/template-lifestyle.jpg";
 import templateCloseup from "@/assets/template-closeup.jpg";
 
-// Site Assets - Image Generation
 const photoShootTemplates = [
   { 
-    name: "Studio Lighting", 
-    description: "Professional studio product shots",
-    image: templateStudio,
-    featured: true
-  },
-  { 
-    name: "Lifestyle Photography", 
-    description: "Natural product in daily life",
-    image: templateLifestyle
+    name: "360° Product View", 
+    description: "Interactive rotation showcase",
+    image: template360
   },
   { 
     name: "Model Fashion Shoot", 
@@ -41,59 +34,84 @@ const photoShootTemplates = [
     image: templateModel
   },
   { 
-    name: "Moon Scene", 
-    description: "Dramatic moonlit product shots",
-    image: "hsl(220 30% 25%)"
+    name: "Hero Banner", 
+    description: "Large homepage hero images",
+    image: templateHero
   },
   { 
-    name: "Safari Adventure", 
-    description: "Wild outdoor product scenes",
-    image: "hsl(35 40% 55%)"
+    name: "Product Scene", 
+    description: "Lifestyle product photography",
+    image: templateScene
   },
   { 
-    name: "Black Friday Sale", 
-    description: "Promotional sale imagery",
-    image: "hsl(0 0% 10%)"
+    name: "Studio Lighting", 
+    description: "Professional studio shots",
+    image: templateStudio
+  },
+  { 
+    name: "Social Media Ad", 
+    description: "Engaging social content",
+    image: templateSocial
+  },
+  { 
+    name: "Lifestyle Photography", 
+    description: "Natural product in daily life",
+    image: templateLifestyle
+  },
+  { 
+    name: "Product Close-up", 
+    description: "Detailed texture showcase",
+    image: templateCloseup
   },
 ];
 
-// Video Assets
 const videoTemplates = [
   { 
-    name: "Fashion Hero Video", 
-    description: "Cinematic fashion showcase",
-    image: videoModel,
-    isVideo: true,
-    featured: true
-  },
-  { 
     name: "360° Product Rotation", 
-    description: "Spinning product showcase video",
+    description: "Spinning product showcase",
     image: video360,
     isVideo: true
   },
   { 
-    name: "Product Animation", 
-    description: "Dynamic product movement",
+    name: "Model Fashion Walk", 
+    description: "Professional model video",
+    image: videoModel,
+    isVideo: true
+  },
+  { 
+    name: "Unboxing Experience", 
+    description: "Product reveal video",
+    image: videoUnboxing,
+    isVideo: true
+  },
+  { 
+    name: "Product Demo", 
+    description: "Feature demonstration",
     image: videoDemo,
     isVideo: true
   },
   { 
-    name: "Product 360°", 
-    description: "Complete rotation view",
-    image: video360,
-    isVideo: true
-  },
-  { 
     name: "Social Media Reel", 
-    description: "Short-form viral content",
+    description: "Short-form content",
     image: videoSocial,
     isVideo: true
   },
   { 
     name: "Lifestyle Scene", 
-    description: "Product in daily life video",
+    description: "Product in daily life",
     image: videoLifestyle,
+    isVideo: true
+  },
+  { 
+    name: "Before & After", 
+    description: "Transformation showcase",
+    image: videoBeforeAfter,
+    isVideo: true
+  },
+  { 
+    name: "Features Highlight", 
+    description: "Key features overview",
+    image: videoFeatures,
     isVideo: true
   },
 ];
@@ -177,76 +195,33 @@ const Index = () => {
         {/* Site Assets - Image Generation */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-foreground mb-6">Site Assets - Image Generation</h3>
-          <div className="space-y-8">
-            {/* Featured large card */}
-            {photoShootTemplates.filter(t => t.featured).map((template) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {photoShootTemplates.map((template) => (
               <TemplateCard 
                 key={template.name} 
                 name={template.name}
                 description={template.description}
                 exampleImage={template.image}
                 onClick={() => setSelectedTemplate(template)}
-                className="[&>div:first-child]:aspect-[2/1]"
               />
             ))}
-            {/* Two medium cards side by side */}
-            <div className="grid grid-cols-2 gap-8">
-              {photoShootTemplates.slice(1, 3).map((template) => (
-                <TemplateCard 
-                  key={template.name} 
-                  name={template.name}
-                  description={template.description}
-                  exampleImage={template.image}
-                  onClick={() => setSelectedTemplate(template)}
-                />
-              ))}
-            </div>
-            {/* Three smaller cards */}
-            <div className="grid grid-cols-3 gap-8">
-              {photoShootTemplates.slice(3).map((template) => (
-                <TemplateCard 
-                  key={template.name} 
-                  name={template.name}
-                  description={template.description}
-                  exampleImage={template.image}
-                  onClick={() => setSelectedTemplate(template)}
-                />
-              ))}
-            </div>
           </div>
         </div>
 
         {/* Video Assets */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-foreground mb-6">Video Assets</h3>
-          <div className="flex gap-8">
-            {/* Left side - 2x2 grid of regular cards */}
-            <div className="flex-1 grid grid-cols-2 gap-8">
-              {videoTemplates.filter(t => !t.featured).map((template) => (
-                <TemplateCard 
-                  key={template.name} 
-                  name={template.name}
-                  description={template.description}
-                  exampleImage={template.image}
-                  isVideo={template.isVideo}
-                  onClick={() => setSelectedTemplate(template)}
-                />
-              ))}
-            </div>
-            {/* Right side - Featured tall card */}
-            <div className="w-1/3">
-              {videoTemplates.filter(t => t.featured).map((template) => (
-                <TemplateCard 
-                  key={template.name} 
-                  name={template.name}
-                  description={template.description}
-                  exampleImage={template.image}
-                  isVideo={template.isVideo}
-                  onClick={() => setSelectedTemplate(template)}
-                  className="h-full"
-                />
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {videoTemplates.map((template) => (
+              <TemplateCard 
+                key={template.name} 
+                name={template.name}
+                description={template.description}
+                exampleImage={template.image}
+                isVideo={template.isVideo}
+                onClick={() => setSelectedTemplate(template)}
+              />
+            ))}
           </div>
         </div>
 
