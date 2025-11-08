@@ -97,6 +97,54 @@ const imageGenerationTemplates = [
   },
 ];
 
+const threeDTemplates = [
+  { 
+    name: "360° Product View", 
+    description: "Interactive rotating product display",
+    image: "hsl(26 36% 84%)",
+    featured: true
+  },
+  { 
+    name: "AR Try-On", 
+    description: "Augmented reality preview",
+    image: "hsl(29 31% 81%)" 
+  },
+  { 
+    name: "3D Model Viewer", 
+    description: "Interactive 3D product model",
+    image: "hsl(27 34% 86%)" 
+  },
+];
+
+const promotionalTemplates = [
+  { 
+    name: "Hero Slideshow", 
+    description: "Dynamic banner carousel",
+    image: "hsl(31 29% 79%)",
+    featured: true
+  },
+  { 
+    name: "Flash Sale Banner", 
+    description: "Limited time offer display",
+    image: "hsl(30 20% 92%)" 
+  },
+  { 
+    name: "Discount Announcement", 
+    description: "Promotional offer card",
+    image: "hsl(30 25% 65%)" 
+  },
+  { 
+    name: "Seasonal Campaign", 
+    description: "Holiday promotional banner",
+    image: "hsl(28 33% 83%)" 
+  },
+  { 
+    name: "New Arrival Banner", 
+    description: "Product launch announcement",
+    image: "hsl(25 38% 88%)" 
+  },
+];
+
 const otherTemplates = [
   { 
     name: "Flat Lay", 
@@ -283,6 +331,68 @@ const Index = () => {
             {/* Second row - Grid of 4 cards */}
             <div className="grid grid-cols-4 gap-8">
               {imageGenerationTemplates.filter(t => !t.featured).map((template) => (
+                <TemplateCard 
+                  key={template.name} 
+                  name={template.name}
+                  description={template.description}
+                  exampleImage={template.image}
+                  onClick={() => setSelectedTemplate(template)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* 3D & Interactive */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-foreground mb-6">3D & Interactive</h3>
+          <div className="flex gap-8">
+            {/* Left side - Large featured card */}
+            <div className="w-2/3">
+              {threeDTemplates.filter(t => t.featured).map((template) => (
+                <TemplateCard 
+                  key={template.name} 
+                  name={template.name}
+                  description={template.description}
+                  exampleImage={template.image}
+                  onClick={() => setSelectedTemplate(template)}
+                  className="h-full"
+                />
+              ))}
+            </div>
+            {/* Right side - 2 smaller cards stacked */}
+            <div className="w-1/3 flex flex-col gap-8">
+              {threeDTemplates.filter(t => !t.featured).map((template) => (
+                <TemplateCard 
+                  key={template.name} 
+                  name={template.name}
+                  description={template.description}
+                  exampleImage={template.image}
+                  onClick={() => setSelectedTemplate(template)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Promotional Templates */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-foreground mb-6">Promotional Templates</h3>
+          <div className="space-y-8">
+            {/* Wide banner-style card */}
+            {promotionalTemplates.filter(t => t.featured).map((template) => (
+              <TemplateCard 
+                key={template.name} 
+                name={template.name}
+                description={template.description}
+                exampleImage={template.image}
+                onClick={() => setSelectedTemplate(template)}
+                className="[&>div:first-child]:aspect-[3/1]"
+              />
+            ))}
+            {/* Grid of smaller promotional cards */}
+            <div className="grid grid-cols-4 gap-8">
+              {promotionalTemplates.filter(t => !t.featured).map((template) => (
                 <TemplateCard 
                   key={template.name} 
                   name={template.name}
