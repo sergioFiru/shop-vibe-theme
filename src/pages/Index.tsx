@@ -254,18 +254,34 @@ const Index = () => {
         {/* Video Generation Templates */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-foreground mb-6">AI Video Generation</h3>
-          <div className="grid grid-cols-4 grid-rows-2 gap-8">
-            {videoGenerationTemplates.map((template) => (
-              <TemplateCard 
-                key={template.name} 
-                name={template.name}
-                description={template.description}
-                exampleImage={template.image}
-                isVideo={template.isVideo}
-                onClick={() => setSelectedTemplate(template)}
-                className={template.featured ? "row-span-2" : ""}
-              />
-            ))}
+          <div className="grid grid-cols-4 auto-rows-fr gap-8">
+            {/* Left side - 3x2 grid */}
+            <div className="col-span-3 grid grid-cols-3 gap-8">
+              {videoGenerationTemplates.filter(t => !t.featured).map((template) => (
+                <TemplateCard 
+                  key={template.name} 
+                  name={template.name}
+                  description={template.description}
+                  exampleImage={template.image}
+                  isVideo={template.isVideo}
+                  onClick={() => setSelectedTemplate(template)}
+                />
+              ))}
+            </div>
+            {/* Right side - Featured card spanning 2 rows */}
+            <div className="row-span-2">
+              {videoGenerationTemplates.filter(t => t.featured).map((template) => (
+                <TemplateCard 
+                  key={template.name} 
+                  name={template.name}
+                  description={template.description}
+                  exampleImage={template.image}
+                  isVideo={template.isVideo}
+                  onClick={() => setSelectedTemplate(template)}
+                  className="h-full"
+                />
+              ))}
+            </div>
           </div>
         </div>
 

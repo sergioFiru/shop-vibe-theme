@@ -16,7 +16,7 @@ const TemplateCard = ({ name, description, exampleImage, onClick, isVideo = fals
   
   return (
     <Card className={cn("group overflow-hidden border-border hover:shadow-lg transition-shadow cursor-pointer rounded-md", className)} onClick={onClick}>
-      <div className="aspect-square overflow-hidden bg-secondary relative">
+      <div className="aspect-square overflow-hidden bg-secondary relative h-full">
         {isVideo && isImageUrl ? (
           <>
             <video 
