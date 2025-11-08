@@ -101,18 +101,18 @@ const threeDTemplates = [
   { 
     name: "360° Product View", 
     description: "Interactive rotating product display",
-    image: "hsl(26 36% 84%)",
+    image: "",
     featured: true
   },
   { 
     name: "AR Try-On", 
     description: "Augmented reality preview",
-    image: "hsl(29 31% 81%)" 
+    image: "" 
   },
   { 
     name: "3D Model Viewer", 
     description: "Interactive 3D product model",
-    image: "hsl(27 34% 86%)" 
+    image: "" 
   },
 ];
 
@@ -120,28 +120,28 @@ const promotionalTemplates = [
   { 
     name: "Hero Slideshow", 
     description: "Dynamic banner carousel",
-    image: "hsl(31 29% 79%)",
+    image: "",
     featured: true
   },
   { 
     name: "Flash Sale Banner", 
     description: "Limited time offer display",
-    image: "hsl(30 20% 92%)" 
+    image: "" 
   },
   { 
     name: "Discount Announcement", 
     description: "Promotional offer card",
-    image: "hsl(30 25% 65%)" 
+    image: "" 
   },
   { 
     name: "Seasonal Campaign", 
     description: "Holiday promotional banner",
-    image: "hsl(28 33% 83%)" 
+    image: "" 
   },
   { 
     name: "New Arrival Banner", 
     description: "Product launch announcement",
-    image: "hsl(25 38% 88%)" 
+    image: "" 
   },
 ];
 
