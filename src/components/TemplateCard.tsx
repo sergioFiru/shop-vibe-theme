@@ -14,8 +14,8 @@ const TemplateCard = ({ name, description, exampleImage, onClick, isVideo = fals
   const isImageUrl = exampleImage.startsWith('http') || exampleImage.startsWith('/') || exampleImage.startsWith('data:');
   
   return (
-    <Card className={`group overflow-hidden border-border hover:shadow-lg transition-shadow cursor-pointer rounded-md ${className || ''}`} onClick={onClick}>
-      <div className="aspect-square overflow-hidden bg-secondary relative">
+    <Card className={`group overflow-hidden border-border hover:shadow-lg transition-shadow cursor-pointer rounded-md flex flex-col ${className || ''}`} onClick={onClick}>
+      <div className="aspect-square overflow-hidden bg-secondary relative flex-shrink-0">
         {isVideo && isImageUrl ? (
           <>
             <video 
@@ -45,7 +45,7 @@ const TemplateCard = ({ name, description, exampleImage, onClick, isVideo = fals
           />
         )}
       </div>
-      <CardContent className="p-4">
+      <CardContent className="p-4 mt-auto">
         <h3 className="font-medium text-foreground mb-1">{name}</h3>
         <p className="text-sm text-muted-foreground">{description}</p>
       </CardContent>
