@@ -70,9 +70,9 @@ const videoGenerationTemplates = [
 
 const imageGenerationTemplates = [
   { 
-    name: "360° Product View", 
-    description: "Generate rotating product showcase",
-    image: template360,
+    name: "Hero Product Showcase", 
+    description: "Create stunning large-scale product imagery",
+    image: templateHero,
     featured: true
   },
   { 
@@ -94,11 +94,6 @@ const imageGenerationTemplates = [
     name: "Lifestyle Photography", 
     description: "Natural product in daily life",
     image: templateLifestyle
-  },
-  { 
-    name: "Close-up Detail", 
-    description: "Highlight product features",
-    image: templateCloseup
   },
 ];
 
@@ -273,22 +268,19 @@ const Index = () => {
         {/* Image Generation Templates */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-foreground mb-6">AI Image Generation</h3>
-          <div className="flex gap-8">
-            {/* Left side - Featured card */}
-            <div className="w-3/4">
-              {imageGenerationTemplates.filter(t => t.featured).map((template) => (
-                <TemplateCard 
-                  key={template.name} 
-                  name={template.name}
-                  description={template.description}
-                  exampleImage={template.image}
-                  onClick={() => setSelectedTemplate(template)}
-                  className="h-full"
-                />
-              ))}
-            </div>
-            {/* Right side - Grid of remaining cards */}
-            <div className="flex-1 grid grid-cols-2 gap-8">
+          <div className="space-y-8">
+            {/* First row - Featured card */}
+            {imageGenerationTemplates.filter(t => t.featured).map((template) => (
+              <TemplateCard 
+                key={template.name} 
+                name={template.name}
+                description={template.description}
+                exampleImage={template.image}
+                onClick={() => setSelectedTemplate(template)}
+              />
+            ))}
+            {/* Second row - Grid of 4 cards */}
+            <div className="grid grid-cols-4 gap-8">
               {imageGenerationTemplates.filter(t => !t.featured).map((template) => (
                 <TemplateCard 
                   key={template.name} 
