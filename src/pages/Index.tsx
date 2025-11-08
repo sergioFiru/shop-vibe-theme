@@ -4,47 +4,59 @@ import TemplateCard from "@/components/TemplateCard";
 import GenerationModal from "@/components/GenerationModal";
 import { useState } from "react";
 
-const templates = [
+import template360 from "@/assets/template-360-view.jpg";
+import templateModel from "@/assets/template-model-shoot.jpg";
+import templateHero from "@/assets/template-hero-banner.jpg";
+import templateScene from "@/assets/template-product-scene.jpg";
+import templateStudio from "@/assets/template-studio-lighting.jpg";
+import templateSocial from "@/assets/template-social-ad.jpg";
+import templateLifestyle from "@/assets/template-lifestyle.jpg";
+import templateCloseup from "@/assets/template-closeup.jpg";
+
+const imageGenerationTemplates = [
   { 
     name: "360° Product View", 
     description: "Generate rotating product showcase",
-    image: "hsl(30 35% 85%)" 
+    image: template360
   },
   { 
     name: "Model Photoshoot", 
     description: "Create professional model imagery",
-    image: "hsl(30 25% 70%)" 
+    image: templateModel
   },
   { 
     name: "Hero Banner", 
     description: "Design stunning hero sections",
-    image: "hsl(25 40% 90%)" 
+    image: templateHero
   },
   { 
     name: "Product in Scene", 
     description: "Place products in lifestyle settings",
-    image: "hsl(30 30% 80%)" 
+    image: templateScene
   },
   { 
     name: "Studio Lighting", 
     description: "Professional studio product shots",
-    image: "hsl(30 30% 75%)" 
+    image: templateStudio
   },
   { 
     name: "Social Media Ad", 
     description: "Create engaging social content",
-    image: "hsl(25 35% 87%)" 
+    image: templateSocial
   },
   { 
     name: "Lifestyle Photography", 
     description: "Natural product in daily life",
-    image: "hsl(28 32% 82%)" 
+    image: templateLifestyle
   },
   { 
     name: "Close-up Detail", 
     description: "Highlight product features",
-    image: "hsl(32 28% 78%)" 
+    image: templateCloseup
   },
+];
+
+const otherTemplates = [
   { 
     name: "Flat Lay", 
     description: "Top-down product arrangement",
@@ -178,16 +190,36 @@ const Index = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-4 gap-8">
-          {templates.map((template) => (
-            <TemplateCard 
-              key={template.name} 
-              name={template.name}
-              description={template.description}
-              exampleImage={template.image}
-              onClick={() => setSelectedTemplate(template)}
-            />
-          ))}
+        {/* Image Generation Templates */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-foreground mb-6">AI Image Generation</h3>
+          <div className="grid grid-cols-4 gap-8">
+            {imageGenerationTemplates.map((template) => (
+              <TemplateCard 
+                key={template.name} 
+                name={template.name}
+                description={template.description}
+                exampleImage={template.image}
+                onClick={() => setSelectedTemplate(template)}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Other Templates */}
+        <div>
+          <h3 className="text-2xl font-semibold text-foreground mb-6">Other Templates</h3>
+          <div className="grid grid-cols-4 gap-8">
+            {otherTemplates.map((template) => (
+              <TemplateCard 
+                key={template.name} 
+                name={template.name}
+                description={template.description}
+                exampleImage={template.image}
+                onClick={() => setSelectedTemplate(template)}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
