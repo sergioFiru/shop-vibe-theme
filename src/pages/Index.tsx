@@ -272,15 +272,6 @@ const Index = () => {
       <SectionNav />
       
       <section className="container mx-auto px-4 py-24">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold text-foreground mb-6">
-            Generate AI Assets for Your E-commerce
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose a template below and create professional product imagery in seconds
-          </p>
-        </div>
-        
         {/* Video Generation Templates */}
         <div id="video-generation" className="mb-32 border-t border-border pt-16">
           <h3 className="text-4xl font-bold text-foreground mb-10 text-center">AI Video Generation</h3>
