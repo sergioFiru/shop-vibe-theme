@@ -42,9 +42,9 @@ const Hero = () => {
     image: view360,
     label: "360° View"
   }];
-  return <section className="relative min-h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-background via-secondary/30 to-background overflow-hidden py-20">
+  return <section className="relative min-h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-background via-secondary/30 to-background overflow-hidden pt-8 pb-20">
       <div className="container mx-auto px-4 text-center mb-12 z-10">
-        <p className="text-sm text-muted-foreground mb-4">Over 10,000+ assets generated</p>
+        <p className="text-sm text-muted-foreground mb-2">Over 10,000+ assets generated</p>
         <h1 className="text-5xl text-foreground mb-6 font-bold md:text-8xl">Fastest way to create
 our Ecomm Assets<br />
           <span className="text-accent">our Ecomm Assets</span>
