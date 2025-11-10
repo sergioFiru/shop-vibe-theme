@@ -30,32 +30,62 @@ const Hero = () => {
   return <section className="relative min-h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-background via-secondary/30 to-background overflow-hidden pt-8 pb-20">
       {/* Background Logos */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img 
-          src={shopifyLogo} 
-          alt="" 
-          className="absolute top-20 right-10 w-64 h-64 opacity-[0.03] dark:opacity-[0.05]"
-        />
-        <img 
-          src={shopifyLogo} 
-          alt="" 
-          className="absolute bottom-32 left-10 w-72 h-72 opacity-[0.03] dark:opacity-[0.05]"
-        />
-        <svg 
-          className="absolute top-1/3 left-1/4 w-56 h-56 opacity-[0.03] dark:opacity-[0.05]"
-          viewBox="0 0 200 200" 
-          fill="currentColor"
-        >
-          <path d="M100 20c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 140c-33.1 0-60-26.9-60-60s26.9-60 60-60 60 26.9 60 60-26.9 60-60 60z"/>
-          <circle cx="100" cy="100" r="30"/>
-        </svg>
-        <svg 
-          className="absolute bottom-20 right-1/4 w-64 h-64 opacity-[0.03] dark:opacity-[0.05]"
-          viewBox="0 0 200 200" 
-          fill="currentColor"
-        >
-          <path d="M100 20c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 140c-33.1 0-60-26.9-60-60s26.9-60 60-60 60 26.9 60 60-26.9 60-60 60z"/>
-          <circle cx="100" cy="100" r="30"/>
-        </svg>
+        {[...Array(8)].map((_, i) => (
+          <img 
+            key={`shopify-${i}`}
+            src={shopifyLogo} 
+            alt="" 
+            className="absolute w-16 h-16 opacity-20"
+            style={{
+              top: `${10 + (i * 15)}%`,
+              left: `${5 + (i * 12)}%`,
+              filter: 'grayscale(100%) brightness(0.4)'
+            }}
+          />
+        ))}
+        {[...Array(8)].map((_, i) => (
+          <img 
+            key={`shopify-right-${i}`}
+            src={shopifyLogo} 
+            alt="" 
+            className="absolute w-16 h-16 opacity-20"
+            style={{
+              top: `${15 + (i * 15)}%`,
+              right: `${5 + (i * 12)}%`,
+              filter: 'grayscale(100%) brightness(0.4)'
+            }}
+          />
+        ))}
+        {[...Array(8)].map((_, i) => (
+          <svg 
+            key={`woo-${i}`}
+            className="absolute w-16 h-16 opacity-20"
+            style={{
+              top: `${8 + (i * 15)}%`,
+              left: `${10 + (i * 12)}%`
+            }}
+            viewBox="0 0 200 200" 
+            fill="#555555"
+          >
+            <path d="M100 20c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 140c-33.1 0-60-26.9-60-60s26.9-60 60-60 60 26.9 60 60-26.9 60-60 60z"/>
+            <circle cx="100" cy="100" r="30"/>
+          </svg>
+        ))}
+        {[...Array(8)].map((_, i) => (
+          <svg 
+            key={`woo-right-${i}`}
+            className="absolute w-16 h-16 opacity-20"
+            style={{
+              top: `${12 + (i * 15)}%`,
+              right: `${10 + (i * 12)}%`
+            }}
+            viewBox="0 0 200 200" 
+            fill="#555555"
+          >
+            <path d="M100 20c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 140c-33.1 0-60-26.9-60-60s26.9-60 60-60 60 26.9 60 60-26.9 60-60 60z"/>
+            <circle cx="100" cy="100" r="30"/>
+          </svg>
+        ))}
       </div>
       <div className="container mx-auto px-4 text-center mb-12 z-10">
         <p className="text-sm text-muted-foreground mb-2">Over 10,000+ assets generated</p>
