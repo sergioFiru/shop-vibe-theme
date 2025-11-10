@@ -1,26 +1,10 @@
 import { Button } from "@/components/ui/button";
-import useEmblaCarousel from "embla-carousel-react";
-import { useEffect } from "react";
 import productShot from "@/assets/example-product-shot.jpg";
 import modelShoot from "@/assets/example-model-shoot.jpg";
 import heroBanner from "@/assets/example-hero-banner.jpg";
 import socialAd from "@/assets/example-social-ad.jpg";
 import view360 from "@/assets/example-360-view.jpg";
 const Hero = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: "center",
-    skipSnaps: false
-  });
-
-  // Auto-scroll effect
-  useEffect(() => {
-    if (!emblaApi) return;
-    const autoScroll = setInterval(() => {
-      emblaApi.scrollNext();
-    }, 3000);
-    return () => clearInterval(autoScroll);
-  }, [emblaApi]);
   const exampleAssets = [{
     id: 1,
     image: productShot,
@@ -56,20 +40,23 @@ const Hero = () => {
       </div>
 
       {/* Carousel Section */}
-      <div className="w-full" style={{
-      perspective: "1000px"
-    }}>
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6 py-8">
-            {exampleAssets.map(asset => <div key={asset.id} className="flex-[0_0_80%] md:flex-[0_0_40%] lg:flex-[0_0_25%] min-w-0" style={{
-            transform: "rotateY(-5deg) rotateX(2deg)",
-            transformStyle: "preserve-3d"
-          }}>
-                <div className="aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl hover-scale border-4 border-border/50">
-                  <img src={asset.image} alt={asset.label} className="h-full w-full object-cover" />
-                </div>
-              </div>)}
-          </div>
+      <div className="w-full overflow-hidden" style={{ perspective: "1000px" }}>
+        <div className="flex gap-6 py-8 animate-scroll">
+          {/* Render items twice for seamless loop */}
+          {[...exampleAssets, ...exampleAssets].map((asset, index) => (
+            <div
+              key={`${asset.id}-${index}`}
+              className="flex-shrink-0 w-[280px] md:w-[320px]"
+              style={{
+                transform: "rotateY(-5deg) rotateX(2deg)",
+                transformStyle: "preserve-3d"
+              }}
+            >
+              <div className="aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl hover-scale border-4 border-border/50">
+                <img src={asset.image} alt={asset.label} className="h-full w-full object-cover" />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>;
