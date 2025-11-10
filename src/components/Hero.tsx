@@ -4,6 +4,7 @@ import modelShoot from "@/assets/example-model-shoot.jpg";
 import heroBanner from "@/assets/example-hero-banner.jpg";
 import socialAd from "@/assets/example-social-ad.jpg";
 import view360 from "@/assets/example-360-view.jpg";
+import shopifyLogo from "@/assets/shopify-logo.svg";
 const Hero = () => {
   const exampleAssets = [{
     id: 1,
@@ -27,6 +28,35 @@ const Hero = () => {
     label: "360° View"
   }];
   return <section className="relative min-h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-background via-secondary/30 to-background overflow-hidden pt-8 pb-20">
+      {/* Background Logos */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <img 
+          src={shopifyLogo} 
+          alt="" 
+          className="absolute top-20 right-10 w-64 h-64 opacity-[0.03] dark:opacity-[0.05]"
+        />
+        <img 
+          src={shopifyLogo} 
+          alt="" 
+          className="absolute bottom-32 left-10 w-72 h-72 opacity-[0.03] dark:opacity-[0.05]"
+        />
+        <svg 
+          className="absolute top-1/3 left-1/4 w-56 h-56 opacity-[0.03] dark:opacity-[0.05]"
+          viewBox="0 0 200 200" 
+          fill="currentColor"
+        >
+          <path d="M100 20c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 140c-33.1 0-60-26.9-60-60s26.9-60 60-60 60 26.9 60 60-26.9 60-60 60z"/>
+          <circle cx="100" cy="100" r="30"/>
+        </svg>
+        <svg 
+          className="absolute bottom-20 right-1/4 w-64 h-64 opacity-[0.03] dark:opacity-[0.05]"
+          viewBox="0 0 200 200" 
+          fill="currentColor"
+        >
+          <path d="M100 20c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 140c-33.1 0-60-26.9-60-60s26.9-60 60-60 60 26.9 60 60-26.9 60-60 60z"/>
+          <circle cx="100" cy="100" r="30"/>
+        </svg>
+      </div>
       <div className="container mx-auto px-4 text-center mb-12 z-10">
         <p className="text-sm text-muted-foreground mb-2">Over 10,000+ assets generated</p>
         <h1 className="text-5xl text-foreground mb-6 font-bold md:text-8xl">Fastest way to create<br />
