@@ -56,7 +56,7 @@ const Hero = () => {
       </div>
 
       {/* Carousel Section */}
-      <div className="w-full max-w-7xl mx-auto px-4" style={{
+      <div className="w-full" style={{
       perspective: "1000px"
     }}>
         <div className="overflow-hidden" ref={emblaRef}>
