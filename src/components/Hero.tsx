@@ -66,7 +66,7 @@ const Hero = () => {
                   transformStyle: "preserve-3d",
                 }}
               >
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl hover-scale border-4 border-border/50">
+                <div className="aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl hover-scale border-4 border-border/50">
                   <img
                     src={asset.image}
                     alt={asset.label}
