@@ -28,19 +28,7 @@ const Hero = () => {
     label: "360° View"
   }];
   const logoPositions = [
-    // Dense random mix across the entire background
-    { top: '3%', left: '5%', type: 'shopify' },
-    { top: '5%', left: '12%', type: 'woo' },
-    { top: '4%', left: '20%', type: 'shopify' },
-    { top: '6%', left: '28%', type: 'woo' },
-    { top: '3%', left: '36%', type: 'shopify' },
-    { top: '5%', left: '44%', type: 'woo' },
-    { top: '4%', left: '52%', type: 'shopify' },
-    { top: '6%', left: '60%', type: 'woo' },
-    { top: '3%', left: '68%', type: 'shopify' },
-    { top: '5%', left: '76%', type: 'woo' },
-    { top: '4%', left: '84%', type: 'shopify' },
-    { top: '6%', left: '92%', type: 'woo' },
+    // Dense random mix across the middle section
     { top: '12%', left: '3%', type: 'woo' },
     { top: '14%', left: '11%', type: 'shopify' },
     { top: '13%', left: '19%', type: 'woo' },
@@ -136,29 +124,6 @@ const Hero = () => {
     { top: '75%', left: '73%', type: 'shopify' },
     { top: '77%', left: '81%', type: 'woo' },
     { top: '76%', left: '89%', type: 'shopify' },
-    { top: '84%', left: '7%', type: 'woo' },
-    { top: '86%', left: '15%', type: 'shopify' },
-    { top: '85%', left: '23%', type: 'woo' },
-    { top: '87%', left: '31%', type: 'shopify' },
-    { top: '84%', left: '39%', type: 'woo' },
-    { top: '86%', left: '47%', type: 'shopify' },
-    { top: '85%', left: '55%', type: 'woo' },
-    { top: '87%', left: '63%', type: 'shopify' },
-    { top: '84%', left: '71%', type: 'woo' },
-    { top: '86%', left: '79%', type: 'shopify' },
-    { top: '85%', left: '87%', type: 'woo' },
-    { top: '87%', left: '95%', type: 'shopify' },
-    { top: '93%', left: '10%', type: 'shopify' },
-    { top: '95%', left: '18%', type: 'woo' },
-    { top: '94%', left: '26%', type: 'shopify' },
-    { top: '96%', left: '34%', type: 'woo' },
-    { top: '93%', left: '42%', type: 'shopify' },
-    { top: '95%', left: '50%', type: 'woo' },
-    { top: '94%', left: '58%', type: 'shopify' },
-    { top: '96%', left: '66%', type: 'woo' },
-    { top: '93%', left: '74%', type: 'shopify' },
-    { top: '95%', left: '82%', type: 'woo' },
-    { top: '94%', left: '90%', type: 'shopify' },
   ];
 
   return <section className="relative min-h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-background via-secondary/30 to-background overflow-hidden pt-8 pb-20">
