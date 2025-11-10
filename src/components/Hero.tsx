@@ -27,64 +27,72 @@ const Hero = () => {
     image: view360,
     label: "360° View"
   }];
+  const logoPositions = [
+    // Random mix of positions across the background
+    { top: '5%', left: '8%', type: 'shopify' },
+    { top: '12%', left: '25%', type: 'woo' },
+    { top: '8%', left: '45%', type: 'shopify' },
+    { top: '15%', left: '65%', type: 'woo' },
+    { top: '10%', left: '82%', type: 'shopify' },
+    { top: '25%', left: '5%', type: 'woo' },
+    { top: '22%', left: '18%', type: 'shopify' },
+    { top: '28%', left: '35%', type: 'woo' },
+    { top: '20%', left: '52%', type: 'shopify' },
+    { top: '30%', left: '72%', type: 'woo' },
+    { top: '25%', left: '88%', type: 'shopify' },
+    { top: '40%', left: '10%', type: 'shopify' },
+    { top: '45%', left: '28%', type: 'woo' },
+    { top: '42%', left: '48%', type: 'shopify' },
+    { top: '48%', left: '68%', type: 'woo' },
+    { top: '40%', left: '85%', type: 'shopify' },
+    { top: '60%', left: '7%', type: 'woo' },
+    { top: '58%', left: '22%', type: 'shopify' },
+    { top: '62%', left: '40%', type: 'woo' },
+    { top: '55%', left: '58%', type: 'shopify' },
+    { top: '65%', left: '75%', type: 'woo' },
+    { top: '60%', left: '90%', type: 'shopify' },
+    { top: '75%', left: '12%', type: 'shopify' },
+    { top: '78%', left: '30%', type: 'woo' },
+    { top: '72%', left: '50%', type: 'shopify' },
+    { top: '80%', left: '65%', type: 'woo' },
+    { top: '75%', left: '82%', type: 'shopify' },
+    { top: '88%', left: '15%', type: 'woo' },
+    { top: '85%', left: '38%', type: 'shopify' },
+    { top: '90%', left: '55%', type: 'woo' },
+    { top: '88%', left: '78%', type: 'shopify' },
+  ];
+
   return <section className="relative min-h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-background via-secondary/30 to-background overflow-hidden pt-8 pb-20">
       {/* Background Logos */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(8)].map((_, i) => (
-          <img 
-            key={`shopify-${i}`}
-            src={shopifyLogo} 
-            alt="" 
-            className="absolute w-16 h-16 opacity-20"
-            style={{
-              top: `${10 + (i * 15)}%`,
-              left: `${5 + (i * 12)}%`,
-              filter: 'grayscale(100%) brightness(0.4)'
-            }}
-          />
-        ))}
-        {[...Array(8)].map((_, i) => (
-          <img 
-            key={`shopify-right-${i}`}
-            src={shopifyLogo} 
-            alt="" 
-            className="absolute w-16 h-16 opacity-20"
-            style={{
-              top: `${15 + (i * 15)}%`,
-              right: `${5 + (i * 12)}%`,
-              filter: 'grayscale(100%) brightness(0.4)'
-            }}
-          />
-        ))}
-        {[...Array(8)].map((_, i) => (
-          <svg 
-            key={`woo-${i}`}
-            className="absolute w-16 h-16 opacity-20"
-            style={{
-              top: `${8 + (i * 15)}%`,
-              left: `${10 + (i * 12)}%`
-            }}
-            viewBox="0 0 200 200" 
-            fill="#555555"
-          >
-            <path d="M100 20c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 140c-33.1 0-60-26.9-60-60s26.9-60 60-60 60 26.9 60 60-26.9 60-60 60z"/>
-            <circle cx="100" cy="100" r="30"/>
-          </svg>
-        ))}
-        {[...Array(8)].map((_, i) => (
-          <svg 
-            key={`woo-right-${i}`}
-            className="absolute w-16 h-16 opacity-20"
-            style={{
-              top: `${12 + (i * 15)}%`,
-              right: `${10 + (i * 12)}%`
-            }}
-            viewBox="0 0 200 200" 
-            fill="#555555"
-          >
-            <path d="M100 20c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 140c-33.1 0-60-26.9-60-60s26.9-60 60-60 60 26.9 60 60-26.9 60-60 60z"/>
-            <circle cx="100" cy="100" r="30"/>
-          </svg>
+        {logoPositions.map((pos, i) => (
+          pos.type === 'shopify' ? (
+            <img 
+              key={`logo-${i}`}
+              src={shopifyLogo} 
+              alt="" 
+              className="absolute w-12 h-12 opacity-15"
+              style={{
+                top: pos.top,
+                left: pos.left,
+                filter: 'grayscale(100%) brightness(0.3)'
+              }}
+            />
+          ) : (
+            <svg 
+              key={`logo-${i}`}
+              className="absolute w-12 h-12 opacity-15"
+              style={{
+                top: pos.top,
+                left: pos.left
+              }}
+              viewBox="0 0 200 200" 
+              fill="#444444"
+            >
+              <path d="M100 20c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80-35.9-80-80-80zm0 140c-33.1 0-60-26.9-60-60s26.9-60 60-60 60 26.9 60 60-26.9 60-60 60z"/>
+              <circle cx="100" cy="100" r="30"/>
+            </svg>
+          )
         ))}
       </div>
       <div className="container mx-auto px-4 text-center mb-12 z-10">
