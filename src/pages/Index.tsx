@@ -273,7 +273,7 @@ const Index = () => {
       
       <section className="container mx-auto px-4 py-24">
         {/* Video Generation Templates */}
-        <div id="video-generation" className="mb-32 border-t border-border pt-16">
+        <div id="video-generation" className="mb-32 border-t border-border">
           <h3 className="text-4xl font-bold text-foreground mb-10 text-center">AI Video Generation</h3>
           <div className="flex gap-8">
             {/* Left side - 3x2 grid of regular cards */}
@@ -307,7 +307,7 @@ const Index = () => {
         </div>
 
         {/* Image Generation Templates */}
-        <div id="image-generation" className="mb-32 border-t border-border pt-16">
+        <div id="image-generation" className="mb-32 border-t border-border">
           <h3 className="text-4xl font-bold text-foreground mb-10 text-center">AI Image Generation</h3>
           <div className="space-y-8">
             {/* First row - Featured card */}
@@ -337,7 +337,7 @@ const Index = () => {
         </div>
 
         {/* 3D & Interactive */}
-        <div id="3d-interactive" className="mb-32 border-t border-border pt-16">
+        <div id="3d-interactive" className="mb-32 border-t border-border">
           <h3 className="text-4xl font-bold text-foreground mb-10 text-center">3D & Interactive</h3>
           <div className="flex gap-8">
             {/* Left side - Large featured card */}
@@ -369,7 +369,7 @@ const Index = () => {
         </div>
 
         {/* Promotional Templates */}
-        <div id="promotional" className="mb-32 border-t border-border pt-16">
+        <div id="promotional" className="mb-32 border-t border-border">
           <h3 className="text-4xl font-bold text-foreground mb-10 text-center">Promotional Templates</h3>
           <div className="space-y-8">
             {/* Wide banner-style card */}
@@ -399,7 +399,7 @@ const Index = () => {
         </div>
 
         {/* Other Templates */}
-        <div id="other-templates" className="border-t border-border pt-16">
+        <div id="other-templates" className="border-t border-border">
           <h3 className="text-4xl font-bold text-foreground mb-10 text-center">Other Templates</h3>
           <div className="grid grid-cols-4 gap-8">
             {otherTemplates.map((template) => (
