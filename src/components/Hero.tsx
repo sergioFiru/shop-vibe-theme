@@ -45,9 +45,9 @@ const Hero = () => {
   return <section className="relative min-h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-background via-secondary/30 to-background overflow-hidden pt-8 pb-20">
       <div className="container mx-auto px-4 text-center mb-12 z-10">
         <p className="text-sm text-muted-foreground mb-2">Over 10,000+ assets generated</p>
-        <h1 className="text-5xl text-foreground mb-6 font-bold md:text-8xl">Fastest way to create
+        <h1 className="text-5xl text-foreground mb-6 font-bold md:text-7xl">Fastest way to create
 our Ecomm Assets<br />
-          <span className="text-accent">our Ecomm Assets</span>
+          <span className="text-accent text-7xl">our Ecomm Assets</span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">Choose a template, upload your product and generate high-resolution visual assets for your Brand.</p>
         <Button size="lg" className="text-lg px-8">
