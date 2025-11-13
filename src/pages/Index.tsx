@@ -257,6 +257,156 @@ const otherTemplates = [
     description: "Product line showcase",
     image: "hsl(28 31% 80%)" 
   },
+  { 
+    name: "Macro Details", 
+    description: "Extreme close-up product shots",
+    image: "hsl(27 37% 89%)" 
+  },
+  { 
+    name: "Hand Model", 
+    description: "Product held in natural poses",
+    image: "hsl(29 28% 82%)" 
+  },
+  { 
+    name: "Desktop Setup", 
+    description: "Workspace arrangement shots",
+    image: "hsl(26 33% 84%)" 
+  },
+  { 
+    name: "Texture Focus", 
+    description: "Material and fabric detail",
+    image: "hsl(30 26% 78%)" 
+  },
+  { 
+    name: "Color Variants", 
+    description: "Multiple color options display",
+    image: "hsl(28 35% 86%)" 
+  },
+  { 
+    name: "Gift Wrapping", 
+    description: "Festive packaging presentation",
+    image: "hsl(31 30% 81%)" 
+  },
+  { 
+    name: "Reflection Shot", 
+    description: "Mirror surface reflections",
+    image: "hsl(27 29% 77%)" 
+  },
+  { 
+    name: "Bokeh Background", 
+    description: "Artistic blurred backdrop",
+    image: "hsl(29 34% 88%)" 
+  },
+  { 
+    name: "Product Grid", 
+    description: "Multiple item arrangement",
+    image: "hsl(26 31% 83%)" 
+  },
+  { 
+    name: "Splash & Water", 
+    description: "Dynamic liquid effects",
+    image: "hsl(30 28% 79%)" 
+  },
+  { 
+    name: "Neon Glow", 
+    description: "Vibrant neon lighting",
+    image: "hsl(28 36% 87%)" 
+  },
+  { 
+    name: "Vintage Filter", 
+    description: "Retro film aesthetics",
+    image: "hsl(31 27% 75%)" 
+  },
+  { 
+    name: "Levitation Effect", 
+    description: "Floating product imagery",
+    image: "hsl(27 32% 85%)" 
+  },
+  { 
+    name: "Exploded View", 
+    description: "Deconstructed product parts",
+    image: "hsl(29 30% 80%)" 
+  },
+  { 
+    name: "Size Comparison", 
+    description: "Scale reference visuals",
+    image: "hsl(26 34% 86%)" 
+  },
+  { 
+    name: "Product Line-up", 
+    description: "Sequential product display",
+    image: "hsl(30 29% 82%)" 
+  },
+  { 
+    name: "Smoke Effects", 
+    description: "Atmospheric smoke styling",
+    image: "hsl(28 31% 78%)" 
+  },
+  { 
+    name: "Geometric Props", 
+    description: "Modern shape compositions",
+    image: "hsl(31 33% 84%)" 
+  },
+  { 
+    name: "Aerial View", 
+    description: "Bird's eye perspective",
+    image: "hsl(27 28% 81%)" 
+  },
+  { 
+    name: "Product Detail", 
+    description: "Feature highlight close-ups",
+    image: "hsl(29 35% 88%)" 
+  },
+  { 
+    name: "Natural Light", 
+    description: "Sunlit window photography",
+    image: "hsl(26 30% 85%)" 
+  },
+  { 
+    name: "Shadow Play", 
+    description: "Dramatic shadow effects",
+    image: "hsl(30 27% 76%)" 
+  },
+  { 
+    name: "Product Labels", 
+    description: "Tag and label focus shots",
+    image: "hsl(28 32% 83%)" 
+  },
+  { 
+    name: "Suspended", 
+    description: "Hanging product display",
+    image: "hsl(31 29% 79%)" 
+  },
+  { 
+    name: "Marble Surface", 
+    description: "Luxury marble backdrop",
+    image: "hsl(27 34% 87%)" 
+  },
+  { 
+    name: "Wood Texture", 
+    description: "Rustic wooden background",
+    image: "hsl(29 31% 80%)" 
+  },
+  { 
+    name: "Abstract Shapes", 
+    description: "Creative geometric layout",
+    image: "hsl(26 28% 82%)" 
+  },
+  { 
+    name: "Product Assembly", 
+    description: "Step-by-step build visuals",
+    image: "hsl(30 33% 86%)" 
+  },
+  { 
+    name: "Lifestyle Flat Lay", 
+    description: "Curated lifestyle arrangement",
+    image: "hsl(28 30% 84%)" 
+  },
+  { 
+    name: "Pattern Background", 
+    description: "Decorative pattern layouts",
+    image: "hsl(31 32% 81%)" 
+  },
 ];
 
 const Index = () => {
